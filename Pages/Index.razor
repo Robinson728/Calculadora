@@ -1,0 +1,47 @@
+﻿@page "/"
+
+@*    <style>
+        button{
+            background-color:blueviolet;
+            padding:10px;
+            color:white;
+            border-radius:0.4em;
+        }
+    </style>*@
+
+<h1><strong>Calculadora</strong></h1>
+
+<br />
+
+<article>
+    <label>Introduzca un numero</label>
+    <input type="number" @bind="numero1"/>
+    <br/>
+    <label>Introduzca un numero</label>
+    <input type="number" @bind="numero2"/>
+    <br/>
+    <button style="background-color:darkblue; padding:10px; color:white; 
+    border-radius:0.4em" @onclick="calcular">Calcular</button>
+</article>
+
+<br /><br />
+
+<h2>La suma es: @suma</h2>
+<h2>La multiplicacion es: @multiplicacion</h2>
+<h2>La resta es: @resta</h2>
+
+@code{
+    private int numero1 { get; set; }
+    private int numero2 { get; set; }
+
+    private int suma;
+    private int multiplicacion;
+    private int resta;
+
+    private void calcular()
+    {
+        suma = numero1 + numero2;
+        resta = numero1 - numero2;
+        multiplicacion = numero1 * numero2; 
+    }
+}
